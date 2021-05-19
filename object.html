@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+      var coworkers = {       //객체 생성
+        "programmer":"egoing",
+        "designer":"lessche"
+      };
+      document.write("programmer : "+coworkers.programmer+"<br>");
+      document.write("designer : "+coworkers.designer+"<br>");
+      coworkers.bookkeeper = "duru";  //객체 정보 추가
+      document.write("bookkeeper : "+coworkers.bookkeeper+"<br>");
+      coworkers["data scientist"] = "taeho";  //공백문자가 들어간 항목생성
+      document.write("data scientist : "+coworkers["data scientist"]+"<br>");
+    </script>
+
+    <h2>Iterate</h2>
+    <script>
+      for(var key in coworkers){    //coworkers객체에 있는 키에 대해 모두 수행
+          document.write(key+" : "+coworkers[key]+"<br>");
+      }
+    </script>
+    <h2>Property & Method</h2>
+    <script>
+      coworkers.showAll = function() {  //객체에 소속된 함수(메소드)
+        for(var key in this){    //this: 함수가 소속된 객체
+            document.write(key+" : "+this[key]+'<br>');
+        }
+      }
+      coworkers.showAll();
+    </script>
+
+  </body>
+</html>
